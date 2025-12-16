@@ -3,7 +3,7 @@ using ManagementDomain.Models;
 
 namespace Management.Application.Services
 {
-    public class StudentService
+    public  class StudentService
     {
         public DbContext DbContext { get; set; }
 
@@ -22,6 +22,14 @@ namespace Management.Application.Services
 
             this.DbContext.Students[this.DbContext.StudentCount] = newStudent;
             this.DbContext.StudentCount++;
+        }
+        public Student[] GetStudents()
+        {
+            return DbContext.Students;
+        }
+        public int StudentsCApasity()
+        {
+            return DbContext.Students.Length;
         }
     }
 }
