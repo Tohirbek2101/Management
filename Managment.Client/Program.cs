@@ -43,9 +43,8 @@ namespace Managment.Client
         }
         public static void ShowStudengMenu()
         {
-            bool isRunning = true; 
-
-            while (isRunning) 
+            bool isRunning = true;
+            do
             {
                 Console.WriteLine("\n1. Talaba qo'shish");
                 Console.WriteLine("2. Talabalarni ko'rish");
@@ -58,7 +57,7 @@ namespace Managment.Client
                 if (!int.TryParse(input, out int choice))
                 {
                     Console.WriteLine("Iltimos, raqam kiriting!");
-                    continue; 
+                    continue;
                 }
 
                 switch (choice)
@@ -72,15 +71,15 @@ namespace Managment.Client
                     case 3:
                         PrintStudentCApasity();
                         break;
-                    case 0: 
+                    case 0:
                         Console.WriteLine("Dasturdan chiqilyapti...");
-                        isRunning = false; 
+                        isRunning = false;
                         break;
                     default:
                         Console.WriteLine("Noto'g'ri tanlov, qayta urinib ko'ring.");
                         break;
                 }
-            }
+            }while (isRunning);
         }
         public static void AddStudent()
         {
